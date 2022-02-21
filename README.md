@@ -1,6 +1,6 @@
-![example workflow](https://github.com/deckarep/golang-set/actions/workflows/ci.yml/badge.svg)
-[![Go Report Card](https://goreportcard.com/badge/github.com/deckarep/golang-set)](https://goreportcard.com/report/github.com/deckarep/golang-set)
-[![GoDoc](https://godoc.org/github.com/deckarep/golang-set?status.svg)](http://godoc.org/github.com/deckarep/golang-set)
+![example workflow](https://github.com/billinghamj/golang-set/actions/workflows/ci.yml/badge.svg)
+[![Go Report Card](https://goreportcard.com/badge/github.com/billinghamj/golang-set)](https://goreportcard.com/report/github.com/billinghamj/golang-set)
+[![GoDoc](https://godoc.org/github.com/billinghamj/golang-set?status.svg)](http://godoc.org/github.com/billinghamj/golang-set)
 
 # golang-set
 
@@ -39,7 +39,7 @@ This package is trusted by many companies and thousands of open-source packages.
 
 The code below demonstrates how a Set collection can better manage data and actually minimize boilerplate and needless loops in code. This package now fully supports *generic* syntax so you are now able to instantiate a collection for any [comparable](https://flaviocopes.com/golang-comparing-values/) type object.
 
-What is considered comparable in Go? 
+What is considered comparable in Go?
 * `Booleans`, `integers`, `strings`, `floats` or basically primitive types.
 * `Pointers`
 * `Arrays`
@@ -64,9 +64,6 @@ type myStruct {
 
 // Alternatively a set of structs
 mySet := mapset.NewSet[myStruct]()
-
-// Lastly a set that can hold anything using the any or empty interface keyword: interface{}. This is effectively removes type safety.
-mySet := mapset.NewSet[any]()
 ```
 
 ## Comprehensive Example
@@ -76,7 +73,7 @@ package main
 
 import (
   "fmt"
-  mapset "github.com/deckarep/golang-set"
+  mapset "github.com/billinghamj/golang-set"
 )
 
 func main() {
@@ -91,7 +88,7 @@ func main() {
   sciences := mapset.NewSet[string]()
   sciences.Add("biology")
   sciences.Add("chemistry")
-  
+
   // Create a string-based set of electives.
   electives := mapset.NewSet[string]()
   electives.Add("welding")
@@ -113,7 +110,7 @@ Sets will *automatically* deduplicate the same data.
     .Union(sciences)
     .Union(electives)
     .Union(bonus)
-  
+
   fmt.Println(all)
 ```
 
@@ -161,7 +158,3 @@ Output:
 ```sh
 2
 ```
-
-Thanks for visiting!
-
--deckarep

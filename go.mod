@@ -1,3 +1,3 @@
-module github.com/deckarep/golang-set
+module github.com/billinghamj/golang-set
 
 go 1.18
